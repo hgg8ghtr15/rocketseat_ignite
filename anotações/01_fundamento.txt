@@ -1,0 +1,56 @@
+--- tipo do solicitações
+get = leitura
+post = criar
+put = atualiza
+delete = deleta
+pacth = atualiza parcial
+
+---
+1xx = information
+2xx = sucesso
+
+3xx = redirecionamento
+
+4xx = erro
+    400 = bad request
+    401 = unauthorized
+    403 = Forbidden
+    404 = Not found
+    422 = unprocessable entity
+
+5xx = erro
+    502 = bad gateway
+
+
+
+--- Parametros das requisições
+
+--# header
+authorization : app.rocketseat.com.br
+method : get
+pacth : /api/journey-nodes
+reference : http://www.app.rocketseat.com.br/node/
+
+--# Query parameters
+http://www.app.rocketseat.com.br/node/user?page=2&limit=100
+chave : page
+valor : 2
+separator : & 
+
+--# Router parameters
+http://www.app.rocketseat.com.br/node/user/{id}
+
+--# body parameters
+{
+    "authorization": "app.rocketseat.com.br",
+}
+
+
+--- projeto
+sudo apt update 
+sudo apt install yarn
+
+npm install express 
+npm install nodemon -D
+-------Importante arquivos de script 
+    "dev":"CHOKIDAR_USEPOLLING=true nodemon server.js"
