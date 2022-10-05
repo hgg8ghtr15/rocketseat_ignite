@@ -25,13 +25,18 @@ const clientes = []
 function verificaSeExisteCPF(request, response, next){
     const {cpf} = request.headers
     const cliente = clientes.find((cliente) => cliente.cpf === cpf)
-
+    console.log(cliente)
     if (!cliente){
         return response.status(400).json({error: "Cliente não cadastrado!"})
     }
     request.cliente = cliente
     return next()
 }
+
+app.get("/conta", verificaSeExisteCPF, (request, response)=>{
+    const {cliente} = request
+    return response.status(200).json(cliente)
+})
 
 app.post("/conta", (request, response) => {
     const { cpf, nome } = request.body;
@@ -49,6 +54,22 @@ app.post("/conta", (request, response) => {
         estrato: []
     })
     return response.status(201).send("Usuario criado com sucesso!")
+})
+
+app.put("/conta", verificaSeExisteCPF, (request, response)=>{
+    const { nome } = request.body
+    const { cliente } = request
+
+    clientes.nome = nome
+    return response.status(200).send("Usuario Atualizado com sucesso!")
+})
+
+app.delete("/conta", verificaSeExisteCPF, (request, response)=>{
+    const { cliente } = request
+
+    clientes.splice(cliente, 1)
+
+    return response.status(200).json({ clientes})
 })
 
 // app.use(verificaSeExisteCPF) dodas as rotas usa
@@ -86,6 +107,8 @@ app.get("/estrato/data", verificaSeExisteCPF, (request, response)=>{
     )
     return response.status(200).json(estrato)
 })
+
+
 
 app.listen(porta, ()=>{
     console.log(`servidor iniciado em http://localhost:${porta}`)
