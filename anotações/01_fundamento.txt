@@ -54,3 +54,17 @@ npm install express
 npm install nodemon -D
 -------Importante arquivos de script 
     "dev":"CHOKIDAR_USEPOLLING=true nodemon server.js"
+
+
+npm install --global yarn
+yarn --version
+
+yarn add express
+yarn add nodemon -D
+yarn add @types/express -D
+yarn add typescript -D
+yarn tsc --init
+yarn tsc
+    arquivo tsconfig
+        outDir = /dist
+
