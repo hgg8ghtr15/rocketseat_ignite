@@ -59,12 +59,45 @@ npm install nodemon -D
 npm install --global yarn
 yarn --version
 
+yarn init -y
 yarn add express
 yarn add nodemon -D
-yarn add @types/express -D
 yarn add typescript -D
+yarn add @types/express -D
+yarn add transpile-only
 yarn tsc --init
 yarn tsc
     arquivo tsconfig
-        outDir = /dist
+        52 outDir = /dist
+        28 strict = true "Comentar"
+yarn add ts-node-dev -D
+
+yarn add uuid
+yarn add @types/uuid -D
+
+
+
+    script
+        "dev":"CHOKIDAR_USEPOLLING=true ts-node-dev --inspect --transpile-only --ignore-Watch mode_modules --respawn src/server.ts"
+
+# Debug configurações
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node", <------
+            "request": "attach",   <------
+            "name": "Launch Program",
+            "skipFiles": ["<node_internals>/**"],
+            "outFiles": ["${workspaceFolder}/**/*.js"]
+        }
+    ]
+}
+
+
+
+
+
+
+
 

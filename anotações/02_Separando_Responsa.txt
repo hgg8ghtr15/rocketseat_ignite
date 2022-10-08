@@ -1,0 +1,19 @@
+# Pasta 
+    src -> dentro dela fica as
+        routes -> dentro dela fica as rotas de cada recurso exeplo cada tabela
+        model -> 
+
+# router
+    * fica nossa rota que era chamar
+
+# model
+    * Sempre criado com nome Maiuscolo
+    * formato de classe
+    * Fica nosso modelo "types ou interface"
+
+# Repositories
+    * Começa com Maiuscolo
+    * tipo uma class
+    * aonde é realizado as opeação de banco 
+    * define o tipo de acesso
+    
