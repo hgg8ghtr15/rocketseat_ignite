@@ -2,6 +2,8 @@
     src -> dentro dela fica as
         routes -> dentro dela fica as rotas de cada recurso exeplo cada tabela
         model -> 
+        Repositories
+        Services
 
 # router
     * fica nossa rota que era chamar
@@ -16,4 +18,34 @@
     * tipo uma class
     * aonde é realizado as opeação de banco 
     * define o tipo de acesso
+
+# Services -> 
+
+*** Responsabiliadades
+    
+    routes
+        * Recebe o requeste e executa o serviço
+        * Da o retorno do 
+        * Cada rota faz uma coisa apenas
+
+    Services
+        * Recebe a request e realiza o serviço.
+        * Cada arquivo executa o seu serviço
+    
+    Respositorio
+        * Arquivo com as funções 
+        * Arquivo com a interface das funções
+        
+
+
+    
+
+
+
+
+
+
+
+
+
     
