@@ -5,9 +5,10 @@ interface IEspecificacaoRepositorioDTO {
     descricao: string;
 }
 
-interface IEspecificacaoRepositoio{
+interface IEspecificacaoRepositorio{
     create({name, descricao}:IEspecificacaoRepositorioDTO): void
     findByName(name:string): Especificacao| undefined;
+    listar():Especificacao []
 }
 
-export { IEspecificacaoRepositoio, IEspecificacaoRepositorioDTO }
+export { IEspecificacaoRepositorio, IEspecificacaoRepositorioDTO }

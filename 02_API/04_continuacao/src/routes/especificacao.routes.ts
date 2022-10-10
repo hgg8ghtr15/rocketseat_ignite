@@ -1,18 +1,15 @@
 import { Router } from 'express'
-import { CreateEspecificacaoService } from '../modules/cars/services/CreateEspecificacaoService'
-import { EspecificacaoRepositorio } from '../modules/cars/repositories/EspecificacaoRepositorio'
-
+import { createEspecificacaoController } from '../modules/cars/useCases/createEspecificacao'
+import { listarCategoriaController } from '../modules/cars/useCases/listarEspecificacao'
 
 const especificacaoRoutes = Router()
-const especificacaoRepositorio = new EspecificacaoRepositorio()
 
 especificacaoRoutes.post("/", (request,response) => {
-    const {name, descricao} = request.body
+    return createEspecificacaoController.handle(request, response)
+})
 
-    const createEspecificacaoService = new CreateEspecificacaoService(especificacaoRepositorio)
-    createEspecificacaoService.execute({name, descricao})
-    
-    return response.status(201).send("Categoria Criada com sucesso!")
+especificacaoRoutes.get("/", (request,response) => {
+    return listarCategoriaController.handle(request, response)
 })
 
 export { especificacaoRoutes }

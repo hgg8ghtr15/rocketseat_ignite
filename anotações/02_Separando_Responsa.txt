@@ -23,6 +23,8 @@
 
 *** Responsabiliadades
     
+
+
     routes
         * Recebe o requeste e executa o serviço
         * Da o retorno do 
@@ -35,7 +37,33 @@
     Respositorio
         * Arquivo com as funções 
         * Arquivo com a interface das funções
-        
+
+### Fluxograma
+https://lucid.app/lucidchart/df3f07d0-c9df-43b7-a68a-d1c5969871b1/edit?beaconFlowId=00DEE1EF6343E4D5&invitationId=inv_9db020fe-485f-4234-9944-8e13f18de615&page=0_0#
+
+### Organização das pasta 2.0
+
+    src
+    --routes
+    --modules
+    ----Pasta para cada Entidade
+    ------model
+    ------repositories
+    ------useCases
+
+### Responsabilidade de cadas arquivo
+    * routes 
+
+
+
+
+
+
+
+
+
+
+
 
 
     

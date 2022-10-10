@@ -14,4 +14,4 @@ class CreateCategoriaController {
     }
 }
 
-export {CreateCategoriaController}
+export { CreateCategoriaController }
