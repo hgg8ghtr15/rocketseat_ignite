@@ -75,7 +75,12 @@ yarn add ts-node-dev -D
 yarn add uuid
 yarn add @types/uuid -D
 
+# le arquivos
+    yarn add multer
+    yarn add @types/multer -D
 
+    yarn add csv-parse
+    
 
     script
         "dev":"CHOKIDAR_USEPOLLING=true ts-node-dev --inspect --transpile-only --ignore-Watch mode_modules --respawn src/server.ts"
