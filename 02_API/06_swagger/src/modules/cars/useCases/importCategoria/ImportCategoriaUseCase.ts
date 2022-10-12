@@ -1,4 +1,4 @@
-import sf from 'fs'
+import fs from 'fs'
 import { parse } from 'csv-parse'
 
 import { CategoriaRepositorio } from '../../repositories/implementations/categoriaRepositorio'
@@ -15,7 +15,7 @@ class ImportCategoriaUseCase {
 
     carregarArquivo(file: Express.Multer.File):Promise<IImportCategoria[]>{
         return new Promise((resolve, reject) => {
-            const stream = sf.createReadStream(file.path)
+            const stream = fs.createReadStream(file.path)
             
             const categorias :IImportCategoria[] = []
             
@@ -28,6 +28,7 @@ class ImportCategoriaUseCase {
                     descricao
                 })
             }).on("end", () => { // Terminana
+                fs.promises.unlink(file.path) // remove o arquivo
                 resolve(categorias);
             }).on("error", (err) => {
                 reject(err)
