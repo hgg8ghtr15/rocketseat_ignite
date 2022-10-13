@@ -1,0 +1,28 @@
+1 - inicio projeto
+2 - instalo dependencias
+3 - configuro server
+    crio pasta dist
+4 - crio as rotas
+    1- crio a pasta de "routes"
+    2- crio as rotas
+    3- configuro arquivo index
+5 - configuro pastas
+    src
+    --modules
+    --model
+    --repositorio
+        --implementacao
+    --useCase
+        --cada useCase
+6 - Crio os model
+7 - repositorio
+    IxxxxxDTO
+    Irepositorio
+8 - arquivos do repositorio implementacao
+9 - useCase
+    useCase
+    controller
+    index
+10 - rota do arqui
+
+

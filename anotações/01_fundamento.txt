@@ -64,12 +64,13 @@ yarn add express
 yarn add nodemon -D
 yarn add typescript -D
 yarn add @types/express -D
-yarn add transpile-only
+///yarn add transpile-only não usar
 yarn tsc --init
 yarn tsc
     arquivo tsconfig
         52 outDir = /dist
         28 strict = true "Comentar"
+        
 yarn add ts-node-dev -D
 
 yarn add uuid
