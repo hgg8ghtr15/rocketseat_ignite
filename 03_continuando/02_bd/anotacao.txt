@@ -1,0 +1,23 @@
+#-site fonte
+    https://typeorm.io/
+
+install
+    yarn add typeorm reflect-metadata
+
+    yarn add pg
+
+tsconfig
+    "emitDecoratorMetadata": true, 
+    "experimentalDecorators": true, 
+
+criar pasta database
+    dentro de src
+
+    criar o arquivo index com a connecrion
+
+    importa no server
+
+
+criar arquivo ormconfig.json na raiz
+
+

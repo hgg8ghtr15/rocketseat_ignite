@@ -1,0 +1,80 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"Open API",
+        "description":" Um demo de nosso swagger-ui-express",
+        "version":"1.0.0",
+        "contact":{
+            "email":"fabiolukascj@gmail.com"
+        }  
+    },
+
+    "paths":{
+        "/categoria":{
+            "post":{
+                "tags":["Categoria"],
+                "summary":"Criar categoria",
+                "description":"Criar uma nova categoria",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                           "schema": {
+                                "type": "object",
+                                "properties":{
+                                    "name":{
+                                        "type": "string"
+                                    },
+                                    "descricao":{
+                                        "type": "string"
+                                    }
+                                },
+                                "example":{
+                                    "name":"Categoria exemplo",
+                                    "descricao": "Nome da descricao da categocia"
+                                }
+                           }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description":"Criada com sucesso"
+                    },
+                    "500":{
+                        "description":"Categoria ja existente"
+                    }
+                }
+            },
+            "get":{
+               "tags":["Categoria"],
+               "summary":"Lista todas as categoria",
+               "description": "Lista todas as categoria cadastradas",
+               "responses":{
+                    "200": {
+                        "description": "Categorias listadas com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array",
+                                    "items":{
+                                        "type": "object",
+                                        "properties": {
+                                            "name":{
+                                                "type": "string"
+                                            },
+                                            "descricao":{
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+               }
+            }
+        }
+    }
+
+
+}

@@ -9,7 +9,6 @@ class ListarUsuarioIdUseCase{
     constructor(private usuarioRepositorio: UsuarioRepositorio){}
 
     execute({usuario_id}:IRequest):Usuario{
-        console.log(usuario_id)
         const usuario = this.usuarioRepositorio.listarUsuarioId(usuario_id)
         if(!usuario){
             throw new Error("Usuario nao exeiste!")

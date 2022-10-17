@@ -7,7 +7,6 @@ class ListarUsuarioIdController {
 
     handle(request: Request, response: Response): Response {
         const { usuario_id } = request.params
-        console.log(usuario_id)
         const usuario = this.listarUsuarioIdUseCase.execute({usuario_id})
         return response.status(200).json(usuario)
     }

@@ -1,0 +1,75 @@
+instalar o docker
+
+criar arquivo
+    Dockerfile
+        FROM node  
+
+
+        WORKDIR /usr/app
+
+        COPY package.json ./
+
+        RUN npm install
+
+        COPY . .
+
+        EXPOSE 3000
+
+        CMD ["npm", "run", "dev" ]
+
+criar ignore
+    .dockerignore
+
+
+# Comandos
+fazer o Docker login
+    docker login
+
+criar uma contanner do docker
+    docker build -t executando .
+
+ve o que esta rodando
+    docker ps -a
+
+configurando porta 
+    docker run -p 3000:3000 executando
+
+Abre a pasta do arquivo docker
+    docker exec -it romantic_banzai /bin/bash
+    exit --> para sair
+
+Criar arquivo
+    docker-compose.yml
+
+        version: '3.7'
+
+        services:
+        app:
+            build: .
+            container_name: meuContainer
+            ports:
+            - 3000:3000
+            volumes:
+            - .:/usr/app
+
+verifica ip do docker
+    docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
+    docker exec database_rentx cat /etc/hosts
+    network_mode: host
+
+Docker-compose up - faz o build
+    docker-compose up --> executa no terminal
+    docker-compose up -d --> executa com terminal fechado
+    docker-compose start -d --> executa com terminal fechado
+
+    docker-compose up --force-recreate -> forca a reciação
+
+
+docker-compose down - remove o contanner compose
+
+docker logs
+    docker logs meuContainer -f
+
+remove contaninner
+    docker rm meuContainer
+    docker rm id
