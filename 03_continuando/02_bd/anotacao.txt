@@ -21,3 +21,7 @@ criar pasta database
 criar arquivo ormconfig.json na raiz
 
 
+Criando as Micrations
+    1-> criar o script
+    2-> Crio a pasta das Micrations
+    3-> Configura a posta no ormconfig.json
